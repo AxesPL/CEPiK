@@ -12,4 +12,5 @@ public class Pojazd {
     private Long id;
     private String marka;
     private String model;
+    private int rok;
 }
