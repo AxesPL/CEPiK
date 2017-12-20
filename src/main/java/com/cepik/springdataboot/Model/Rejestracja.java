@@ -1,8 +1,9 @@
-package Model;
+package com.cepik.springdataboot.Model;
 
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.*;
 
 @Entity
@@ -10,7 +11,7 @@ public class Rejestracja implements Serializable {
 
     public Rejestracja() { }
 
-    public Rejestracja(String numerRejestracyjny, String numerSwiadectwaHomologacji, Date dataPierwszejRejestracji, Date terminBadanieTechnicznego, Integer przebiegPrzyOstatnimBadaniu, String seriaDowodu, String numerDowodu, Date dataWydaniaDowodu, String organRejestrujacy, Date waznoscDokumentu) {
+    public Rejestracja(String numerRejestracyjny, String numerSwiadectwaHomologacji, Date dataPierwszejRejestracji, Date terminBadaniaTechnicznego, Integer przebiegPrzyOstatnimBadaniu, String seriaDowodu, String numerDowodu, Date dataWydaniaDowodu, String organRejestrujacy, Date waznoscDokumentu) {
         this.numerRejestracyjny = numerRejestracyjny;
         this.numerSwiadectwaHomologacji = numerSwiadectwaHomologacji;
         this.dataPierwszejRejestracji = dataPierwszejRejestracji;
@@ -46,8 +47,14 @@ public class Rejestracja implements Serializable {
     @Column(nullable=true)
     private String uwagi;
     @Column(nullable=false, length = 17)
-    private String numerVIN;       //mapowany
-    private String PESEL;           //mapowany
+    private String numerVIN;
+
+    @ManyToOne
+    @JoinColumn(name = "idPojazdu")
+    private Pojazd pojazd;
+
+//    @ManyToMany
+//    private List<Wlasciciel>wlasciciele;           //mapowany
 
     public String getNumerRejestracyjny() {
         return numerRejestracyjny;
@@ -145,13 +152,13 @@ public class Rejestracja implements Serializable {
         this.numerVIN = numerVIN;
     }
 
-    public String getPESEL() {
-        return PESEL;
-    }
-
-    public void setPESEL(String PESEL) {
-        this.PESEL = PESEL;
-    }
+//    public List<Wlasciciel> getWlasciciele() {
+//        return wlasciciele;
+//    }
+//
+//    public void setWlasciciel(Wlasciciel wlasciciel) {
+//        this.wlasciciele.add(wlasciciel);
+//    }
 
     @Override
     public String toString() {

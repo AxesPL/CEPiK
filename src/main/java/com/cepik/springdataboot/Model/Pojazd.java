@@ -1,6 +1,7 @@
-package Model;
+package com.cepik.springdataboot.Model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.*;
 
@@ -20,10 +21,11 @@ public class Pojazd implements Serializable {
     private String wariantSilnika;
     @Column(nullable=false)
     private Integer rokProdukcji;
-    @Column(nullable=false)
     private String seriaKartyPojazdu;
-    @Column(nullable=false)
     private String numerKartyPojazdu;
+
+    @OneToMany(mappedBy = "numerVIN")
+    private List<Rejestracja>rejestracje;
 
     public Pojazd() { }
 

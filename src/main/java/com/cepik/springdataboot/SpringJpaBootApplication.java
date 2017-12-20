@@ -7,13 +7,14 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
-import Model.Pojazd;
-import Repository.PojazdRepository;
+import com.cepik.springdataboot.Model.Pojazd;
+import com.cepik.springdataboot.Repository.PojazdRepository;
 
 @SpringBootApplication
 public class SpringJpaBootApplication {
 
 	public static void main(String[] args) {
+
 		ConfigurableApplicationContext ctx =
 				SpringApplication.run(SpringJpaBootApplication.class, args);
 

@@ -1,8 +1,10 @@
-package Model;
+package com.cepik.springdataboot.Model;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import java.io.Serializable;
+import java.util.List;
 
 public class Wlasciciel implements Serializable {
 
@@ -16,6 +18,9 @@ public class Wlasciciel implements Serializable {
     @Id
     @Column(nullable=false, length = 11, unique = true)
     private String PESEL;
+
+   // @ManyToMany(mappedBy = "wlasciciele")
+   // private List<Rejestracja>rejestracje;
 
     public Wlasciciel(){};
 
@@ -67,6 +72,14 @@ public class Wlasciciel implements Serializable {
         this.PESEL = PESEL;
     }
 
+//    public List<Rejestracja> getRejestracje() {
+//        return rejestracje;
+//    }
+//
+//    public void setRejestracje(List<Rejestracja> rejestracje) {
+//        this.rejestracje = rejestracje;
+//    }
+
     @Override
     public String toString() {
         return "Wlasciciel{" +
@@ -75,6 +88,7 @@ public class Wlasciciel implements Serializable {
                 ", firma='" + firma + '\'' +
                 ", adresZamieszkania='" + adresZamieszkania + '\'' +
                 ", PESEL='" + PESEL + '\'' +
+  //              ", Jego numery rejestracyjne to'" + rejestracje.toString() + '\'' +
                 '}';
     }
 
