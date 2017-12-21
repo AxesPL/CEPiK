@@ -1,4 +1,4 @@
-package com.cepik.springdataboot;
+package cepik;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
