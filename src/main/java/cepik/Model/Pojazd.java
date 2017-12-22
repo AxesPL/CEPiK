@@ -37,6 +37,6 @@ public class Pojazd implements Serializable {
     private String seriaKartyPojazdu;
     private String numerKartyPojazdu;
 
-    @OneToMany(mappedBy = "numerVIN")
-    private List<Rejestracja>rejestracje;
+//    @OneToMany
+//    private List<Rejestracja>rejestracje;
 }

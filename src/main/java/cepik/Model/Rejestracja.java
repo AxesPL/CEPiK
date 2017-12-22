@@ -3,12 +3,7 @@ package cepik.Model;
 
 import lombok.Data;
 
-import javax.persistence.Id;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.JoinColumn;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
@@ -27,9 +22,9 @@ public class Rejestracja implements Serializable {
     private LocalDate terminBadaniaTechnicznego;
     @Column(nullable = false)
     private Integer przebiegPrzyOstatnimBadaniu;
-    @Column(nullable = false,length=6)
+    @Column(nullable = false, length = 6)
     private String seriaDowodu;
-    @Column(nullable = false,length=7)
+    @Column(nullable = false, length = 7)
     private String numerDowodu;
     @Column(nullable = false)
     private LocalDate dataWydaniaDowodu;
@@ -38,14 +33,13 @@ public class Rejestracja implements Serializable {
     @Column(nullable = false)
     private LocalDate waznoscDokumentu;
     private String uwagi;
-    @Column(nullable=false, length = 17)
-    private String numerVIN;
+//    @Column(nullable=false, length = 17)
+//    private String numerVIN;
 
     @ManyToOne
-    @JoinColumn(name = "idPojazdu")
+    @JoinColumn(name = "VIN")
     private Pojazd pojazd;
-
-    @ManyToMany(mappedBy = "rejestracje")
+    @ManyToMany(cascade = CascadeType.ALL)
     private List<Wlasciciel> wlasciciele;
 
 }

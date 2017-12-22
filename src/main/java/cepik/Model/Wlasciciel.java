@@ -3,10 +3,7 @@ package cepik.Model;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
 
@@ -25,6 +22,6 @@ public class Wlasciciel implements Serializable {
     @Column(nullable=false, length = 11, unique = true)
     private String PESEL;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL,mappedBy = "wlasciciele")
     private Set<Rejestracja> rejestracje;
 }
