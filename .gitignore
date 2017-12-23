@@ -25,3 +25,5 @@ dist/
 nbdist/
 .nb-gradle/
 .mvn/
+/.mvn/
+src/test/java/com/
