@@ -36,7 +36,5 @@ public class Pojazd implements Serializable {
     private Integer rokProdukcji;
     private String seriaKartyPojazdu;
     private String numerKartyPojazdu;
-
-//    @OneToMany
-//    private List<Rejestracja>rejestracje;
+    
 }
