@@ -2,6 +2,7 @@ package cepik.Kontrolery;
 
 import cepik.Enumy.Wynik;
 import cepik.Model.Pojazd;
+import cepik.Model.Wlasciciel;
 import cepik.Serwisy.ObslugaPojazdService;
 import cepik.Serwisy.ObslugaWlascicielService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,7 @@ public class CepikRestController {
     }
 
     @RequestMapping(path = "/wlasciciel", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public Wynik zapiszDaneOWlascicielu(@RequestBody cepik.Model.Wlasciciel wlasciciel) {
+    public Wynik zapiszDaneOWlascicielu(@RequestBody Wlasciciel wlasciciel) {
         return obslugaWlascicielService.dodajWlasciciela(wlasciciel);
     }
 
