@@ -1,8 +1,9 @@
 package cepik.Kontrolery;
 
 import cepik.Enumy.Wynik;
-import cepik.Model.Pojazd;
-import cepik.Serwisy.ObslugaPojazdService;
+import cepik.model.Pojazd;
+import cepik.Serwisy.ObslugaRejestracjaService;
+import cepik.model.Rejestracja;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,11 +15,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class CepikRestController {
 
     @Autowired
-    private ObslugaPojazdService obslugaPojazdService;
+    private ObslugaRejestracjaService obslugaRejestracjaService;
 
-    @RequestMapping(path = "/pojazd",method = RequestMethod.POST,consumes = MediaType.APPLICATION_JSON_VALUE)
-    public Wynik zapiszDaneOPojezdzie(@RequestBody Pojazd pojazd){
-        return obslugaPojazdService.dodajPojazd(pojazd);
+    @RequestMapping(path = "/rejestracja",method = RequestMethod.POST,consumes = MediaType.APPLICATION_JSON_VALUE)
+    public Wynik zapiszDaneORejestracji(@RequestBody Rejestracja rejestracja){
+        return obslugaRejestracjaService.dodajRejestracje(rejestracja);
     }
 
 }

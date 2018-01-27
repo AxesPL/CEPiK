@@ -1,4 +1,4 @@
-package cepik.Model;
+package cepik.model;
 
 import cepik.Enumy.WariantNadwoziaEnum;
 import cepik.Enumy.WariantSilnikaEnum;
@@ -36,5 +36,5 @@ public class Pojazd implements Serializable {
     private Integer rokProdukcji;
     private String seriaKartyPojazdu;
     private String numerKartyPojazdu;
-    
+
 }
