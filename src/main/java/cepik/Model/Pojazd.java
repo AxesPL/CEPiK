@@ -37,4 +37,6 @@ public class Pojazd implements Serializable {
     private String seriaKartyPojazdu;
     private String numerKartyPojazdu;
 
+    // Komentarz testowy do st
+
 }
