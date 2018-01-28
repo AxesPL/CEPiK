@@ -1,7 +1,7 @@
 package cepik.Serwisy;
 
 import cepik.Enumy.Wynik;
-import cepik.Model.Wlasciciel;
+import cepik.model.Wlasciciel;
 import cepik.Repository.WlascicielRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

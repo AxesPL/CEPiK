@@ -1,6 +1,6 @@
 package cepik.Repository;
 
-import cepik.Model.Rejestracja;
+import cepik.model.Rejestracja;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
