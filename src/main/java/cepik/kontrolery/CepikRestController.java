@@ -1,8 +1,7 @@
-package cepik.Kontrolery;
+package cepik.kontrolery;
 
-import cepik.Enumy.Wynik;
-import cepik.model.Pojazd;
-import cepik.Serwisy.ObslugaRejestracjaService;
+import cepik.enumy.Wynik;
+import cepik.serwisy.ObslugaRejestracjaService;
 import cepik.model.Rejestracja;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
