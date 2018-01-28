@@ -1,8 +1,8 @@
-package cepik.Kontrolery;
+package cepik.kontrolery;
 
 import cepik.Enumy.Wynik;
-import cepik.Model.Pojazd;
-import cepik.Model.Wlasciciel;
+import cepik.model.Pojazd;
+import cepik.model.Wlasciciel;
 import cepik.Serwisy.ObslugaPojazdService;
 import cepik.Serwisy.ObslugaWlascicielService;
 import org.springframework.beans.factory.annotation.Autowired;

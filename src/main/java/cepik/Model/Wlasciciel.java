@@ -1,4 +1,4 @@
-package cepik.Model;
+package cepik.model;
 
 
 import lombok.Data;
