@@ -1,8 +1,8 @@
 package cepik.Serwisy;
 
 
-import cepik.Enumy.Wynik;
-import cepik.Model.Pojazd;
+import cepik.enumy.Wynik;
+import cepik.model.Pojazd;
 import cepik.Repository.PojazdRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,6 +1,6 @@
 package cepik.Repository;
 
-import cepik.Model.Pojazd;
+import cepik.model.Pojazd;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
