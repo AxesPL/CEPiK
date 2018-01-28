@@ -4,6 +4,7 @@ import cepik.model.Pojazd;
 import cepik.model.Rejestracja;
 import cepik.model.Wlasciciel;
 import cepik.serwisy.ObslugaPojazdService;
+import cepik.serwisy.ObslugaRejestracjaService;
 import cepik.serwisy.ObslugaWlascicielService;
 import cepik.enumy.Wynik;
 import cepik.repository.PojazdRepository;
@@ -28,6 +29,9 @@ public class CepikRestController {
 
     @Autowired
     private PojazdRepository pojazdRepository;
+
+    @Autowired
+    private ObslugaRejestracjaService obslugaRejestracjaService;
 
 
     @RequestMapping(path = "/pojazd", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
