@@ -33,5 +33,6 @@ public class Pojazd implements Serializable {
     private Integer rokProdukcji;
     private String seriaKartyPojazdu;
     private String numerKartyPojazdu;
-    
+
+
 }

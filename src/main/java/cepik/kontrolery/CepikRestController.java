@@ -1,9 +1,11 @@
 package cepik.kontrolery;
 
+import cepik.Serwisy.ObslugaPojazdService;
+import cepik.Serwisy.ObslugaWlascicielService;
 import cepik.enumy.Wynik;
 import cepik.model.Pojazd;
 import cepik.Repository.PojazdRepository;
-import cepik.Serwisy.ObslugaPojazdService;
+import cepik.model.Wlasciciel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +19,9 @@ public class CepikRestController {
 
     @Autowired
     private ObslugaPojazdService obslugaPojazdService;
+
+    @Autowired
+    private ObslugaWlascicielService obslugaWlascicielService;
 
     @Autowired
     private PojazdRepository pojazdRepository;
@@ -33,5 +38,11 @@ public class CepikRestController {
         List<Pojazd> pojazdy = pojazdRepository.findAll();
         return ResponseEntity.ok(pojazdy);
     }
+
+    @RequestMapping(path = "/wlasciciel", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public Wynik zapiszDaneOWlascicielu(@RequestBody Wlasciciel wlasciciel) {
+        return obslugaWlascicielService.dodajWlasciciela(wlasciciel);
+    }
+
 
 }
