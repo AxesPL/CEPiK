@@ -1,4 +1,4 @@
-package cepik.Enumy;
+package cepik.enumy;
 
 
 import lombok.Getter;

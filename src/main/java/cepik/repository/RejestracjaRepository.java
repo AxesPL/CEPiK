@@ -1,4 +1,4 @@
-package cepik.Repository;
+package cepik.repository;
 
 import cepik.model.Rejestracja;
 import org.springframework.data.repository.CrudRepository;

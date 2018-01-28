@@ -1,4 +1,4 @@
-package cepik.Utils;
+package cepik.utils;
 
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;

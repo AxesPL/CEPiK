@@ -1,10 +1,10 @@
 package cepik.kontrolery;
 
-import cepik.Enumy.Wynik;
+import cepik.enumy.Wynik;
 import cepik.model.Pojazd;
 import cepik.model.Wlasciciel;
-import cepik.Serwisy.ObslugaPojazdService;
-import cepik.Serwisy.ObslugaWlascicielService;
+import cepik.serwisy.ObslugaPojazdService;
+import cepik.serwisy.ObslugaWlascicielService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;

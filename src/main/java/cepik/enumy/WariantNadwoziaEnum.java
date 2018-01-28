@@ -1,4 +1,4 @@
-package cepik.Enumy;
+package cepik.enumy;
 
 public enum WariantNadwoziaEnum {
     SUV,COUPE,FAST_BACK,HATCHBACK,KABRIOLET,KOMBI,LIFTBACK,LIMUZYNA,MIKROVAN,MINIVAN,PICK_UP,ROADSTER,SEDAN,TARGA,VAN

@@ -1,7 +1,7 @@
 package cepik.model;
 
-import cepik.Enumy.WariantNadwoziaEnum;
-import cepik.Enumy.WariantSilnikaEnum;
+import cepik.enumy.WariantNadwoziaEnum;
+import cepik.enumy.WariantSilnikaEnum;
 import lombok.Data;
 
 import javax.persistence.Enumerated;
