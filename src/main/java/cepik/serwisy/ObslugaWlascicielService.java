@@ -1,12 +1,13 @@
-package cepik.Serwisy;
+package cepik.serwisy;
 
-import cepik.Repository.WlascicielRepository;
 import cepik.enumy.Wynik;
-import cepik.model.Wlasciciel;
+import cepik.Model.Wlasciciel;
+import cepik.repository.WlascicielRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+
 
 @Service
 public class ObslugaWlascicielService {

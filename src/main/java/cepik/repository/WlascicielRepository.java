@@ -1,7 +1,7 @@
-package cepik.Repository;
+package cepik.repository;
 
 
-import cepik.model.Wlasciciel;
+import cepik.Model.Wlasciciel;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
