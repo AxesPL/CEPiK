@@ -1,11 +1,12 @@
 package cepik.kontrolery;
 
 import cepik.model.Pojazd;
+import cepik.model.Rejestracja;
+import cepik.model.Wlasciciel;
 import cepik.serwisy.ObslugaPojazdService;
 import cepik.serwisy.ObslugaWlascicielService;
 import cepik.enumy.Wynik;
 import cepik.repository.PojazdRepository;
-import cepik.Model.Wlasciciel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -46,4 +47,10 @@ public class CepikRestController {
     public Wynik zapiszDaneOWlascicielu(@RequestBody Wlasciciel wlasciciel) {
         return obslugaWlascicielService.dodajWlasciciela(wlasciciel);
     }
+
+    @RequestMapping(path = "/rejestracja",method = RequestMethod.POST,consumes = MediaType.APPLICATION_JSON_VALUE)
+    public Wynik zapiszDaneORejestracji(@RequestBody Rejestracja rejestracja){
+        return obslugaRejestracjaService.dodajRejestracje(rejestracja);
+    }
 }
+
