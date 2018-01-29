@@ -1,6 +1,8 @@
 package cepik.model;
 
 
+import cepik.utils.LocalDateDeserializer;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -17,24 +19,34 @@ public class Rejestracja implements Serializable {
     private String numerRejestracyjny;
     private String numerSwiadectwaHomologacji;
     @Column(nullable = false)
+
+    @JsonDeserialize(using = LocalDateDeserializer.class)
     private LocalDate dataPierwszejRejestracji;
+
     @Column(nullable = false)
+    @JsonDeserialize(using = LocalDateDeserializer.class)
+
     private LocalDate terminBadaniaTechnicznego;
+
     @Column(nullable = false)
-    private Integer przebiegPrzyOstatnimBadaniu;
+    private int przebiegPrzyOstatnimBadaniu;
+
     @Column(nullable = false, length = 6)
     private String seriaDowodu;
     @Column(nullable = false, length = 7)
     private String numerDowodu;
+
     @Column(nullable = false)
+    @JsonDeserialize(using = LocalDateDeserializer.class)
     private LocalDate dataWydaniaDowodu;
+
     @Column(nullable = false)
     private String organRejestrujacy;
+
     @Column(nullable = false)
+    @JsonDeserialize(using = LocalDateDeserializer.class)
     private LocalDate waznoscDokumentu;
     private String uwagi;
-//    @Column(nullable=false, length = 17)
-//    private String numerVIN;
 
     @ManyToOne
     @JoinColumn(name = "VIN")
