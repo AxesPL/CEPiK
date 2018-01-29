@@ -1,6 +1,7 @@
 package cepik.model;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -20,6 +21,7 @@ public class Wlasciciel implements Serializable {
     private String adresZamieszkania;
     @Id
     @Column(nullable=false, length = 11, unique = true)
+    @JsonFormat(shape = JsonFormat.Shape.STRING)
     private String PESEL;
 
     @ManyToMany(cascade = CascadeType.ALL,mappedBy = "wlasciciele")

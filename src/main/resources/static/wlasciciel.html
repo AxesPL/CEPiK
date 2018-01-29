@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app">
 <head>
     <title>CEP Wprowadx Pojazd</title>
     <meta charset="utf-8">
@@ -8,8 +8,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="js/wlasciciel.js"></script>
 </head>
-<body>
+<body ng-controller="wlascicielController as wlascicielControl">
 
 <div class="container">
     <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
@@ -38,13 +40,13 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-6">
                         <div class="form-group">
-                            <input type="text" name="imie" id="imie" class="form-control input-lg" placeholder="Imię"
+                            <input type="text" name="imie" id="imie" ng-model="wlascicielControl.wlasciciel.imie" class="form-control input-lg" placeholder="Imię"
                                    tabindex="1">
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-8">
                         <div class="form-group">
-                            <input type="text" name="nazwisko" id="nazwisko" class="form-control input-lg"
+                            <input type="text" name="nazwisko" id="nazwisko"  ng-model="wlascicielControl.wlasciciel.nazwisko" class="form-control input-lg"
                                    placeholder="Nazwisko" tabindex="2">
                         </div>
                     </div>
@@ -52,63 +54,71 @@
 
                 <div class="form-group">
                     <input type="text" name="firma" id="firma" class="form-control input-lg"
-                           placeholder="Firma (opcjonalnie)" tabindex="4">
+                           placeholder="Firma (opcjonalnie)"  ng-model="wlascicielControl.wlasciciel.firma" tabindex="4">
                 </div>
 
                 <div class="form-group">
                     <input type="text" name="pesel" id="pesel" class="form-control input-lg" placeholder="PESEL"
-                           tabindex="1">
+                           tabindex="1"  ng-model="wlascicielControl.wlasciciel.PESEL">
                 </div>
 
-                <div class="form-group">
-                    <label class="col-xs-12 col-sm-6 col-md-6 control-label" for="textinput">Adres</label>
-                    <select name="wojewodztwo" class="form-control input-lg">
-                        <option value="--/--">--/--</option>
-                        <option value="dolnośląskie">dolnośląskie</option>
-                        <option value="kujawsko-pomorskie">kujawsko-pomorskie</option>
-                        <option value="lubelskie">lubelskie</option>
-                        <option value="lubuskie">lubuskie</option>
-                        <option value="łódzkie">łódzkie</option>
-                        <option value="małopolskie">małopolskie</option>
-                        <option value="mazowieckie">mazowieckie</option>
-                        <option value="opolskie">opolskie</option>
-                        <option value="podkarpackie">podkarpackie</option>
-                        <option value="podlaskie">podlaskie</option>
-                        <option value="pomorskie">pomorskie</option>
-                        <option value="śląskie">śląskie</option>
-                        <option value="świętokrzyskie">świętokrzyskie</option>
-                        <option value="warmińsko-mazurskie">warmińsko-mazurskie</option>
-                        <option value="wielkopolskie">wielkopolskie</option>
-                        <option value="zachodniopomorskie">zachodniopomorskie</option>
-                    </select>
-                </div>
+                <!--<div class="form-group">-->
+                <!--<label class="col-xs-12 col-sm-6 col-md-6 control-label" for="textinput">Adres</label>-->
+                <!--<select name="wojewodztwo" class="form-control input-lg" id="wojewodztwo">-->
+                <!--<option value="&#45;&#45;/&#45;&#45;">&#45;&#45;/&#45;&#45;</option>-->
+                <!--<option value="dolnośląskie">dolnośląskie</option>-->
+                <!--<option value="kujawsko-pomorskie">kujawsko-pomorskie</option>-->
+                <!--<option value="lubelskie">lubelskie</option>-->
+                <!--<option value="lubuskie">lubuskie</option>-->
+                <!--<option value="łódzkie">łódzkie</option>-->
+                <!--<option value="małopolskie">małopolskie</option>-->
+                <!--<option value="mazowieckie">mazowieckie</option>-->
+                <!--<option value="opolskie">opolskie</option>-->
+                <!--<option value="podkarpackie">podkarpackie</option>-->
+                <!--<option value="podlaskie">podlaskie</option>-->
+                <!--<option value="pomorskie">pomorskie</option>-->
+                <!--<option value="śląskie">śląskie</option>-->
+                <!--<option value="świętokrzyskie">świętokrzyskie</option>-->
+                <!--<option value="warmińsko-mazurskie">warmińsko-mazurskie</option>-->
+                <!--<option value="wielkopolskie">wielkopolskie</option>-->
+                <!--<option value="zachodniopomorskie">zachodniopomorskie</option>-->
+                <!--</select>-->
+                <!--</div>-->
+
+                <!--<div class="form row">-->
+                <!--<div class="col-sm-12 col-md-6 col-sm-offset-2 col-md-offset-3">-->
+                <!--<label for="miasto">Miasto</label>-->
+                <!--<input type="text" placeholder="Miasto" id="miasto" class="form-control">-->
+                <!--</div>-->
+                <!--<div class="col-sm-12 col-md-6 col-sm-offset-2 col-md-offset-3">-->
+                <!--<label for="ulica">Ulica</label>-->
+                <!--<input type="text" placeholder="Ulica" id="ulica" class="form-control">-->
+                <!--</div>-->
+                <!--</div>-->
+
+                <!--<div class="form row">-->
+                <!--<div class="col-sm-12 col-md-4 col-sm-offset-2 col-md-offset-3">-->
+                <!--<label for="nrdomu">Nr Domu</label>-->
+                <!--<input type="text" placeholder="Nr Domu" id="nrDomu" class="form-control">-->
+                <!--</div>-->
+                <!--<div class="col-sm-12 col-md-4 col-sm-offset-2 col-md-offset-3">-->
+                <!--<label for="kodpocztowy">Kod Pocztowy</label>-->
+                <!--<input type="text" placeholder="Kod Pocztowy" id="kodPocztowy" class="form-control">-->
+                <!--</div>-->
+                <!--</div>-->
 
                 <div class="form row">
                     <div class="col-sm-12 col-md-6 col-sm-offset-2 col-md-offset-3">
-                        <label for="ulica">Ulica</label>
-                        <input type="text" placeholder="Ulica" class="form-control">
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-sm-offset-2 col-md-offset-3">
-                        <label for="miasto">Miasto</label>
-                        <input type="text" placeholder="Miasto" class="form-control">
-                    </div>
-                </div>
-
-                <div class="form row">
-                    <div class="col-sm-12 col-md-4 col-sm-offset-2 col-md-offset-3">
-                        <label for="nrdomu">Nr Domu</label>
-                        <input type="text" placeholder="Nr Domu" class="form-control">
-                    </div>
-                    <div class="col-sm-12 col-md-4 col-sm-offset-2 col-md-offset-3">
-                        <label for="kodpocztowy">Kod Pocztowy</label>
-                        <input type="text" placeholder="Kod Pocztowy" class="form-control">
+                        <label for="ulica">Adres zamieszkania</label>
+                        <input type="text" placeholder="Adres zamieszkania" id="adres"  ng-model="wlascicielControl.wlasciciel.adresZamieszkania" class="form-control">
                     </div>
                 </div>
 
                 <hr class="colorgraph">
                 <div class="row">
                     <div class="col-xs-12 col-md-12"><input type="submit" value="Zarejestruj"
-                                                            class="btn btn-success btn-block btn-lg" tabindex="7"></div>
+                                                            łclass="btn btn-success btn-block btn-lg" tabindex="7" ng-click="wlascicielControl.addWlasciciel(wlascicielControl.wlasciciel)">
+                    </div>
                 </div>
         </div>
         </form>

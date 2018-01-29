@@ -47,14 +47,16 @@ public class CepikRestController {
         return ResponseEntity.ok(pojazdy);
     }
 
-    @RequestMapping(path = "/wlasciciel", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public Wynik zapiszDaneOWlascicielu(@RequestBody Wlasciciel wlasciciel) {
-        return obslugaWlascicielService.dodajWlasciciela(wlasciciel);
+    @RequestMapping(path = "/wlasciciel", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Wynik> zapiszDaneOWlascicielu(@RequestBody Wlasciciel wlasciciel) {
+        Wynik wynik = obslugaWlascicielService.dodajWlasciciela(wlasciciel);
+        return ResponseEntity.ok(wynik);
     }
 
-    @RequestMapping(path = "/rejestracja", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public Wynik zapiszDaneORejestracji(@RequestBody Rejestracja rejestracja) {
-        return obslugaRejestracjaService.dodajRejestracje(rejestracja);
+    @RequestMapping(path = "/rejestracja", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Wynik> zapiszDaneORejestracji(@RequestBody Rejestracja rejestracja) {
+        Wynik wynik = obslugaRejestracjaService.dodajRejestracje(rejestracja);
+        return ResponseEntity.ok(wynik);
     }
 }
 
