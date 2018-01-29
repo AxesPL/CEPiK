@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <title>CEP Wprowadz Pojazd</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+</head>
+<body ng-controller="pojazdController as pojazdControl">
+
+<div class="container">
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="pojazd.html">Wprowadz dane o pojeździe</a>
+                <a class="nav-item nav-link" href="rejestracja.html">Wprowadz dane o rejestracji</a>
+                <a class="nav-item nav-link disabled" href="wlasciciel.html">Wprowadz dane o wlascicielu</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="row">
+        <div class=" col-sm-12 col-md-10 col-sm-offset-2 col-md-offset-3">
+            <form role="form">
+                <h2><p>CENTRALNA EWIDENCJA POJAZDÓW</p>
+                    <small> WPROWADŹ POJAZD</small>
+                </h2>
+                <hr class="colorgraph">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                        <div class="form-group">
+                            <input type="text" name="marka" id="marka" class="form-control input-lg" placeholder="Marka"
+                                   tabindex="1" ng-model="pojazdController.pojazd.marka">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                        <div class="form-group">
+                            <input type="text" name="model" id="model" class="form-control input-lg" placeholder="Model"
+                                   tabindex="2" ng-model="pojazdController.pojazd.model">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="wariantnadwozia" id="wariantnadwozia" class="form-control input-lg"
+                           placeholder="Wariant Nadwozia" tabindex="4"
+                           ng-model="pojazdController.pojazd.wariantNadwozia">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="wersjasilnikowa" id="wersjasilnikowa" class="form-control input-lg"
+                           placeholder="Wersja Silnikowa" tabindex="4" ng-model="pojazdController.pojazd.wersjaSilnika">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="numervin" id="numervin" class="form-control input-lg"
+                           placeholder="Numer VIN" tabindex="4" ng-model="pojazdController.pojazd.VIN">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="numervin" id="rokProdukcji" class="form-control input-lg"
+                           placeholder="Rok produkcji" tabindex="4" ng-model="pojazdController.pojazd.rokProdukcji">
+                </div>
+                <hr class="colorgraph">
+                <div class="row">
+                    <button ng-click="pojazdController.addPojazd(pojazdController.pojazd)" class="col-xs-12 col-md-12" >Rejestruj</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    </form>
+</div>
+</div>
+
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="bower_components/bootstrap/assets/js/vendor/jquery.min.js"><\/script>')</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+
+<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+<script type="text/javascript" src="js/pojazd.js"></script>
+</body>
+</html>

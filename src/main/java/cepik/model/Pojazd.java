@@ -2,6 +2,7 @@ package cepik.model;
 
 import cepik.enumy.WariantNadwoziaEnum;
 import cepik.enumy.WariantSilnikaEnum;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import javax.persistence.Enumerated;
@@ -21,6 +22,7 @@ public class Pojazd implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
+    @JsonFormat(shape = JsonFormat.Shape.STRING)
     @Column(nullable=false, length = 17, unique = true)
     private String VIN;
     @Column(nullable=false)

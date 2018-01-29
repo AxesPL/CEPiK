@@ -52,8 +52,8 @@ public class CepikRestController {
         return obslugaWlascicielService.dodajWlasciciela(wlasciciel);
     }
 
-    @RequestMapping(path = "/rejestracja",method = RequestMethod.POST,consumes = MediaType.APPLICATION_JSON_VALUE)
-    public Wynik zapiszDaneORejestracji(@RequestBody Rejestracja rejestracja){
+    @RequestMapping(path = "/rejestracja", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public Wynik zapiszDaneORejestracji(@RequestBody Rejestracja rejestracja) {
         return obslugaRejestracjaService.dodajRejestracje(rejestracja);
     }
 }
