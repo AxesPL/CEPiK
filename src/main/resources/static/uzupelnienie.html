@@ -8,8 +8,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="js/uzupelnienie.js"></script>
 </head>
-<body ng-controller="pojazdController as pojazdControl">
+<body ng-controller="uzupelnienieController as uzupContr">
 
 <div class="container">
     <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
@@ -20,10 +22,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="pojazd.html">Wprowadz dane o pojeździe</a>
                 <a class="nav-item nav-link" href="rejestracja.html">Wprowadz dane o rejestracji</a>
-                <a class="nav-item nav-link disabled" href="wlasciciel.html">Wprowadz dane o wlascicielu</a>
+                <a class="nav-item nav-link " href="wlasciciel.html">Wprowadz dane o wlascicielu</a>
+                <a class="nav-item nav-link" href="uzupelnienie.html">Uzupelnienie informacji</a>
             </div>
         </div>
     </nav>
@@ -32,26 +34,26 @@
         <div class=" col-sm-12 col-md-10 col-sm-offset-2 col-md-offset-3">
             <form role="form">
                 <h2><p>CENTRALNA EWIDENCJA POJAZDÓW</p>
-                    <small> Uzupełnianie dodatkowych danych</small>
+                    <small> Uzupełnianie danych</small>
                 </h2>
                 <hr class="colorgraph">
 
                 <div class="form-group">
                     <input type="text" name="PESEL" id="PESEL" class="form-control input-lg"
                            placeholder="PESEL" tabindex="4"
-                           ng-model="pojazdControl.pojazd.wariantNadwozia">
+                           ng-model="uzupContr.UzupelnijDaneRequest.PESEL">
                 </div>
                 <div class="form-group">
-                    <input type="text" name="numerrejestracyjny" id="numerrejestracyjny" class="form-control input-lg"
-                           placeholder="Numer Rejestracyjny" tabindex="4" ng-model="pojazdControl.pojazd.wersjaSilnika">
+                    <input type="text" name="numerRejestracyjny" id="numerRejestracyjny" class="form-control input-lg"
+                           placeholder="Numer Rejestracyjny" tabindex="4" ng-model="uzupContr.UzupelnijDaneRequest.numerRejestracyjny">
                 </div>
                 <div class="form-group">
-                    <input type="text" name="numervin" id="numervin" class="form-control input-lg"
-                           placeholder="Numer VIN" tabindex="4" ng-model="pojazdControl.pojazd.VIN">
+                    <input type="text" name="numervin" id="VIN" class="form-control input-lg"
+                           placeholder="Numer VIN" tabindex="4" ng-model="uzupContr.UzupelnijDaneRequest.VIN">
                 </div>
                 <hr class="colorgraph">
                 <div class="row">
-                    <button class="col-xs-12 col-md-12" ng-click="pojazdControl.addPojazd(pojazdControl.pojazd)">
+                    <button class="col-xs-12 col-md-12" ng-click="uzupContr.uzupelnij(uzupContr.UzupelnijDaneRequest)">
                         Rejestruj
                     </button>
                 </div>
@@ -70,7 +72,5 @@
 <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
 
-<script type="text/javascript" src="bower_components/angular/angular.js"></script>
-<script type="text/javascript" src="js/pojazd.js"></script>
 </body>
 </html>

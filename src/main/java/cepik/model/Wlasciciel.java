@@ -24,6 +24,6 @@ public class Wlasciciel implements Serializable {
     @JsonFormat(shape = JsonFormat.Shape.STRING)
     private String PESEL;
 
-    @ManyToMany(cascade = CascadeType.ALL,mappedBy = "wlasciciele")
+    @ManyToMany(cascade = CascadeType.ALL,mappedBy = "wlasciciele", fetch = FetchType.EAGER)
     private Set<Rejestracja> rejestracje;
 }

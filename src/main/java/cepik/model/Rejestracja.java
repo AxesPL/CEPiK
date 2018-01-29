@@ -51,7 +51,7 @@ public class Rejestracja implements Serializable {
     @ManyToOne
     @JoinColumn(name = "VIN")
     private Pojazd pojazd;
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     private List<Wlasciciel> wlasciciele;
 
 }

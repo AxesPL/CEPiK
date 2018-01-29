@@ -2,6 +2,7 @@ package cepik.kontrolery;
 
 import cepik.model.Pojazd;
 import cepik.model.Rejestracja;
+import cepik.model.UzupelnijDaneRequest;
 import cepik.model.Wlasciciel;
 import cepik.serwisy.ObslugaPojazdService;
 import cepik.serwisy.ObslugaRejestracjaService;
@@ -13,6 +14,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.print.attribute.standard.Media;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -58,5 +60,12 @@ public class CepikRestController {
         Wynik wynik = obslugaRejestracjaService.dodajRejestracje(rejestracja);
         return ResponseEntity.ok(wynik);
     }
+
+    @RequestMapping(path = "/uzupelnienie",method=RequestMethod.POST,consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Wynik> uzupelnijDaneRejestracyjne(@RequestBody UzupelnijDaneRequest uzupelnijDaneRequest){
+        Wynik wynik = obslugaRejestracjaService.uzupenijDaneORejestracji(uzupelnijDaneRequest);
+        return ResponseEntity.ok(wynik);
+    }
+
 }
 
