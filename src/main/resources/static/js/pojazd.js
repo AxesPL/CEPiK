@@ -1,8 +1,8 @@
 angular.module('app', []).controller('pojazdController', function ($http) {
     var vm = this;
-    console.log("wywolanie !");
+    console.log("wywolanie !angular");
     vm.addPojazd = function (pojazd) {
-        console.log("wywolanie !");
+        console.log("wywolanie http!");
         $http({
             method: 'POST',
             url: 'http://localhost:8080/cepik/pojazd',
@@ -10,8 +10,8 @@ angular.module('app', []).controller('pojazdController', function ($http) {
         }).then(function success(response) {
             vm.pojazd = {};
         }, function error(response) {
-            console.log('Data not saved ' + product);
+            console.log('Data not saved ' + pojazd);
         });
     }
 });
-console.log("wywolanie !");
+console.log("wywolanie js !");

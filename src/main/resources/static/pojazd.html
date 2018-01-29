@@ -39,36 +39,38 @@
                     <div class="col-xs-12 col-sm-6 col-md-6">
                         <div class="form-group">
                             <input type="text" name="marka" id="marka" class="form-control input-lg" placeholder="Marka"
-                                   tabindex="1" ng-model="pojazdController.pojazd.marka">
+                                   tabindex="1" ng-model="pojazdControl.pojazd.marka">
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-6">
                         <div class="form-group">
                             <input type="text" name="model" id="model" class="form-control input-lg" placeholder="Model"
-                                   tabindex="2" ng-model="pojazdController.pojazd.model">
+                                   tabindex="2" ng-model="pojazdControl.pojazd.model">
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <input type="text" name="wariantnadwozia" id="wariantnadwozia" class="form-control input-lg"
                            placeholder="Wariant Nadwozia" tabindex="4"
-                           ng-model="pojazdController.pojazd.wariantNadwozia">
+                           ng-model="pojazdControl.pojazd.wariantNadwozia">
                 </div>
                 <div class="form-group">
                     <input type="text" name="wersjasilnikowa" id="wersjasilnikowa" class="form-control input-lg"
-                           placeholder="Wersja Silnikowa" tabindex="4" ng-model="pojazdController.pojazd.wersjaSilnika">
+                           placeholder="Wersja Silnikowa" tabindex="4" ng-model="pojazdControl.pojazd.wersjaSilnika">
                 </div>
                 <div class="form-group">
                     <input type="text" name="numervin" id="numervin" class="form-control input-lg"
-                           placeholder="Numer VIN" tabindex="4" ng-model="pojazdController.pojazd.VIN">
+                           placeholder="Numer VIN" tabindex="4" ng-model="pojazdControl.pojazd.VIN">
                 </div>
                 <div class="form-group">
                     <input type="text" name="numervin" id="rokProdukcji" class="form-control input-lg"
-                           placeholder="Rok produkcji" tabindex="4" ng-model="pojazdController.pojazd.rokProdukcji">
+                           placeholder="Rok produkcji" tabindex="4" ng-model="pojazdControl.pojazd.rokProdukcji">
                 </div>
                 <hr class="colorgraph">
                 <div class="row">
-                    <button ng-click="pojazdController.addPojazd(pojazdController.pojazd)" class="col-xs-12 col-md-12" >Rejestruj</button>
+                    <button class="col-xs-12 col-md-12" ng-click="pojazdControl.addPojazd(pojazdControl.pojazd)">
+                        Rejestruj
+                    </button>
                 </div>
             </form>
         </div>
